@@ -2,3 +2,4 @@ checker_Mac
 *.o
 *.swp
 *.out
+push_swap

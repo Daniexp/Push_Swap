@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/02 17:07:36 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:15:41 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main(int argc, char **argv)
 	{
 		c = (char) *argv[argc];
 		ft_putchar_fd(c, 1);
+		ft_putchar_fd('\n', 1);
 		argc--;
 	}
 	return (0);
