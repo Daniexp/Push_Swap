@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:34:43 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/02 17:08:57 by dexposit         ###   ########.fr        #
+#    Updated: 2022/03/02 17:28:04 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME):	$(OBJS)
-		@make -C ./libft
+		@make bonus -C ./libft
 		@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 clean:
