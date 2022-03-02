@@ -1,4 +1,4 @@
-checker_Mac
+checker
 *.o
 *.swp
 *.out
