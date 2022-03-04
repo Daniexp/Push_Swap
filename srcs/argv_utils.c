@@ -1,20 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   argv_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/04 14:26:22 by dexposit         ###   ########.fr       */
+/*   Created: 2022/03/04 14:14:37 by dexposit          #+#    #+#             */
+/*   Updated: 2022/03/04 14:16:06 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include "./srcs/libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-
-#endif
+#include "../incl/push_swap.h"
