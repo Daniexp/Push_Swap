@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:34:43 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/04 14:22:45 by dexposit         ###   ########.fr        #
+#    Updated: 2022/03/04 16:17:47 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,13 +18,13 @@ LIBFT = ./srcs/libft/libft.a
 SRCDIR = ./srcs/
 SRCS = argv_utils.c
 MAIN = main.c
-OBJS = $(SRCDIR)$(SRCS:.c=.o)
+OBJS = $(SRCDIR)$(SRCS:.c=.o) $(MAIN:.c=.o)
 
 all: $(NAME)
 
 $(NAME):	$(OBJS)
 		@make bonus -C ./srcs/libft
-		@$(CC) $(FLAGS) -o $(NAME) $(MAIN) $(OBJS) $(LIBFT)
+		@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT)
 
 clean:
 		@make clean -C ./srcs/libft
