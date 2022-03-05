@@ -47,7 +47,11 @@ size_t	svarg(int argc, char **argv)
 		{
 			printf("len arg: %zu\n",ft_strlen(argv[i]));
 			if (*(argv[i]))
+			{
 				splitarg = ft_split(argv[i], ' ');
+				if (!*splitarg)
+					exit(EXIT_FAILURE);
+			}
 			else
 				exit(EXIT_FAILURE);
 			aux = splitarg;

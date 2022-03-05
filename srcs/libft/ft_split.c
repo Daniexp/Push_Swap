@@ -47,7 +47,7 @@ static void	save_word(char	**dst, char	**str, char c)
 		*str = *str + 1;
 }
 
-static void	free_memory(char **res, size_t i)
+static void	free_memory(char **res, int i)
 {
 	while (i-- >= 0)
 		free(res[i]);
