@@ -33,19 +33,26 @@ void	str_valid(char *str)
 	return ;
 }
 
+void	error_msg(void)
+{
+	char	*str;
+
+	str = "Error\n";
+	write(1, str, ft_strlen(str));
+	exit(EXIT_FAILURE);
+}
+
 size_t	svarg(int argc, char **argv)
 {	
 	size_t	i;
 	char	**splitarg;
 	char	**aux;
 
-	printf("num arg: %d\n",argc);
 	if (argc == 0)
-		exit(EXIT_FAILURE);
+		error_msg();
 		i = 1;
 		while (i <= argc)
 		{
-			printf("len arg: %zu\n",ft_strlen(argv[i]));
 			if (*(argv[i]))
 			{
 				splitarg = ft_split(argv[i], ' ');

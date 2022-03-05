@@ -27,8 +27,6 @@
 int main(int argc, char **argv)
 {
 	//si no pasamos argumentos salgo del programa
-	if (argc <= 1)
-		exit(EXIT_FAILURE);
 	svarg(argc - 1, argv);
 	//ahora toca convertir los argumentos a int.
 	//haremos uso del split y atoi de la lib.
