@@ -24,8 +24,7 @@ void	str_valid(char *str)
 			cnt++;
 		}
 		else
-			if ((*str != ' ' && !ft_isdigit(*str))
-					|| ((*str == ' ') && (ft_strlen(str) == 1)))
+			if (*str != ' ' && !ft_isdigit(*str))
 				exit(EXIT_FAILURE);
 		str++;
 	}
@@ -40,11 +39,13 @@ size_t	svarg(int argc, char **argv)
 	char	**splitarg;
 	char	**aux;
 
+	printf("num arg: %d\n",argc);
 	if (argc == 0)
 		exit(EXIT_FAILURE);
 		i = 1;
 		while (i <= argc)
 		{
+			printf("len arg: %zu\n",ft_strlen(argv[i]));
 			if (*(argv[i]))
 				splitarg = ft_split(argv[i], ' ');
 			else
