@@ -38,7 +38,7 @@ void	error_msg(void)
 	char	*str;
 
 	str = "Error\n";
-	write(1, str, ft_strlen(str));
+	write(2, str, 6);
 	exit(EXIT_FAILURE);
 }
 
