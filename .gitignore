@@ -2,4 +2,5 @@ checker
 *.o
 *.swp
 *.out
+*.a
 push_swap

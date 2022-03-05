@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/04 21:27:03 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/05 13:17:08 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,11 @@
 
 int main(int argc, char **argv)
 {
-	if (!svarg(argc - 1, argv))
-		exit(EXIT_FAILURE);
 	//si no pasamos argumentos salgo del programa
 	if (argc <= 1)
 		exit(EXIT_FAILURE);
+	svarg(argc - 1, argv);
 	//ahora toca convertir los argumentos a int.
 	//haremos uso del split y atoi de la lib.
-	//printf("ra\n");	
+	//printf("ra\n");
 }
