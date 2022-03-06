@@ -14,31 +14,29 @@ NAME = push_swap
 CC = gcc
 RM = rm -f
 FLAGS = -Wall -Werror -Wextra -I.
-LIBFT = ./srcs/libft/libft.a
+LIBDIR = ./srcs/libft/
+LIBFT = libft.a
 SRCDIR = ./srcs/
-SRCS = argv_utils.c
+SRCS	=	./srcs/argv_utils.c ./srcs/main_utils.c ./srcs/list_utils.c
 MAIN = main.c
-OBJS = $(SRCDIR)$(SRCS:.c=.o) $(MAIN:.c=.o)
+OBJS	=	$(SRCS:.c=.o) $(MAIN:.c=.o)
 
 all: $(NAME)
 
 $(NAME):	$(OBJS)
-		@make bonus -C ./srcs/libft
-		@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT)
+		@make bonus -C $(LIBDIR)
+		@$(CC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBDIR)$(LIBFT)
 
 clean:
-		@make clean -C ./srcs/libft
+		@make clean -C $(LIBDIR)
 		@$(RM) $(OBJS)
 
 fclean:	clean
-		@make fclean -C ./srcs/libft
+		@make fclean -C $(LIBDIR)
 		@$(RM) $(NAME)
 
 re:		fclean $(NAME)
 
 bonus:
-
-norm:
-		norminette
 
 .PHONY: all clean fclean re

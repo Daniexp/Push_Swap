@@ -10,12 +10,6 @@
 
 #include "../incl/push_swap.h"
 
-void	err_msg(void)
-{
-	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
-}
-
 void	str_valid(char *str)
 {
 	size_t	cnt;
@@ -39,34 +33,40 @@ void	str_valid(char *str)
 	return ;
 }
 
-size_t	svarg(int argc, char **argv)
+char	**arg_split(char **arg)
+{
+	char	**res;
+
+	res = ft_split(*arg, ' ');
+	if (!**arg || !*res)
+		err_msg();
+	return (res);
+}
+
+t_list	*svarg(int argc, char **argv)
 {	
 	size_t	i;
 	char	**splitarg;
 	char	**aux;
+	t_list	*lst;
 
 	if (argc == 0)
 		err_msg();
 		i = 1;
-		while (i <= argc)
+	while (i <= argc)
+	{
+		splitarg = arg_split(&(argv[i]));
+		aux = splitarg;
+		lst = 0;
+		while (*splitarg)
 		{
-			if (*(argv[i]))
-			{
-				splitarg = ft_split(argv[i], ' ');
-				if (!*splitarg)
-					err_msg();
-			}
-			else
-				err_msg();
-			aux = splitarg;
-			while (*splitarg)
-			{
-				str_valid(*splitarg);
-				printf("%d\n", ft_atoi(*splitarg));//meter en lista
-				splitarg++;
-			}
-			free(aux);
-			i++;
+			str_valid(*splitarg);
+			sv_lst_nrpt(&lst, ft_atoi(*splitarg));
+			printf("%d\n", ft_atoi(*splitarg));
+			splitarg++;
 		}
-	return (1);
+		free(aux);
+		i++;
+	}
+	return (lst);
 }

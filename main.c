@@ -26,9 +26,7 @@
 
 int main(int argc, char **argv)
 {
-	//si no pasamos argumentos salgo del programa
-	svarg(argc - 1, argv);
-	//ahora toca convertir los argumentos a int.
-	//haremos uso del split y atoi de la lib.
-	//printf("ra\n");
+	t_list	*entry_stack;
+
+	entry_stack = svarg(argc - 1, argv);
 }

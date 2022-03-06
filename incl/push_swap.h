@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-size_t	svarg(int argc, char **argv);
+t_list	*svarg(int argc, char **argv);
+void	err_msg(void);
+void	sv_lst_nrpt(t_list **lst, int num);
 
 #endif
