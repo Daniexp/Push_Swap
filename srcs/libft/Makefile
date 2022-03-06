@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 13:35:22 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/02 17:29:04 by dexposit         ###   ########.fr        #
+#    Updated: 2022/02/02 14:06:27 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,19 +37,19 @@ NAME			= libft.a
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				@ar rcs $(NAME) $(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
 clean:
-				@$(RM) $(OBJS) $(BONUS_OBJS)
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean:			clean
-				@$(RM) $(NAME)
+				$(RM) $(NAME)
 
 re:				fclean $(NAME)
 
 bonus:			$(BONUSS)
 
 $(BONUSS):		$(OBJS) $(BONUS_OBJS)
-				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus

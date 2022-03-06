@@ -10,6 +10,12 @@
 
 #include "../incl/push_swap.h"
 
+void	err_msg(void)
+{
+	ft_putstr_fd("Error\n", 2);
+	exit(EXIT_FAILURE);
+}
+
 void	str_valid(char *str)
 {
 	size_t	cnt;
@@ -20,26 +26,17 @@ void	str_valid(char *str)
 		if (*str == '-' || *str == '+')
 		{
 			if (ft_isdigit(*(str -1)) || !*(str + 1))
-				exit(EXIT_FAILURE);
+				err_msg();
 			cnt++;
 		}
 		else
 			if (*str != ' ' && !ft_isdigit(*str))
-				exit(EXIT_FAILURE);
+				err_msg();
 		str++;
 	}
 	if (cnt >= 2)
-		exit(EXIT_FAILURE);
+		err_msg();
 	return ;
-}
-
-void	error_msg(void)
-{
-	char	*str;
-
-	str = "Error\n";
-	write(2, str, 6);
-	exit(EXIT_FAILURE);
 }
 
 size_t	svarg(int argc, char **argv)
@@ -49,7 +46,7 @@ size_t	svarg(int argc, char **argv)
 	char	**aux;
 
 	if (argc == 0)
-		error_msg();
+		err_msg();
 		i = 1;
 		while (i <= argc)
 		{
@@ -57,10 +54,10 @@ size_t	svarg(int argc, char **argv)
 			{
 				splitarg = ft_split(argv[i], ' ');
 				if (!*splitarg)
-					exit(EXIT_FAILURE);
+					err_msg();
 			}
 			else
-				exit(EXIT_FAILURE);
+				err_msg();
 			aux = splitarg;
 			while (*splitarg)
 			{

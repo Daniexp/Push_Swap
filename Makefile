@@ -38,4 +38,7 @@ re:		fclean $(NAME)
 
 bonus:
 
+norm:
+		norminette
+
 .PHONY: all clean fclean re
