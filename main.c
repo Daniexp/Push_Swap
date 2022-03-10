@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/10 18:55:29 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:42:33 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,14 @@
 int main(int argc, char **argv)
 {
 	t_list	*arg_lst;
+	t_list	*aux;
 
 	arg_lst = svarg(argc - 1, argv);
-	t_list *aux = arg_lst;
+	aux = cnv_unsg(arg_lst);
+	if (!in_order(arg_lst))
+		printf("No esta ordenado\n");
+	else
+		printf("Esta ordenado\n");
 	while (aux)
 	{
 		printf("%d\n", *(int *)aux->content);

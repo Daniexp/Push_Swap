@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/10 18:55:44 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/10 19:42:51 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@
 t_list	*svarg(int argc, char **argv);
 void	err_msg(void);
 void	sv_lst_nrpt(t_list **lst, int num);
+t_list	*cnv_unsg(t_list *ini);
+size_t	in_order(t_list *lst);
 
 #endif
