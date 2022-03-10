@@ -1,27 +1,32 @@
-#include "../incl/push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   list_utils.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/10 18:51:30 by dexposit          #+#    #+#             */
+/*   Updated: 2022/03/10 18:54:01 by dexposit         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-/*
-	crearnos una lista a partir del int como argumento
-	Tenemos que comprobar si el número es repetido
-		es decir recorrer la lista buscando el número a añadir
-		si no esta no es repetido
-	si es repetido err_msg();
-	si no lo es lo añadimos al final¿?
-*/
+#include "../incl/push_swap.h"
 
 void	sv_lst_nrpt(t_list **lst, int num)
 {
-	t_list	**aux;
+	int		*ptr;
+	t_list	*aux;
 
-	aux = lst;
-	while (*aux)
+	ptr = ft_calloc(1, sizeof(int));
+	if (!ptr)
+		exit(EXIT_FAILURE);
+	*ptr = num;
+	aux = *lst;
+	while (aux)
 	{
-		if (*(int*)(*aux)->content == num)
+		if (*(int *)aux->content == num)
 			err_msg();
-		(*aux) = (*aux)->next;
+		aux = aux->next;
 	}
-	if (!*lst)
-		*lst = ft_lstnew((num));
-	else
-		ft_lstadd_back(lst, ft_lstnew(num));
+	ft_lstadd_back(lst, ft_lstnew((void *)ptr));
 }

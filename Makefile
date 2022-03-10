@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:34:43 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/05 13:14:11 by dexposit         ###   ########.fr        #
+#    Updated: 2022/03/10 15:52:13 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,8 @@ RM = rm -f
 FLAGS = -Wall -Werror -Wextra -I.
 LIBDIR = ./srcs/libft/
 LIBFT = libft.a
-SRCDIR = ./srcs/
-SRCS	=	./srcs/argv_utils.c ./srcs/main_utils.c ./srcs/list_utils.c
-MAIN = main.c
-OBJS	=	$(SRCS:.c=.o) $(MAIN:.c=.o)
+SRCS	=	main.c ./srcs/argv_utils.c ./srcs/main_utils.c ./srcs/list_utils.c
+OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/05 13:17:08 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/10 18:55:29 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@
 
 int main(int argc, char **argv)
 {
-	t_list	*entry_stack;
+	t_list	*arg_lst;
 
-	entry_stack = svarg(argc - 1, argv);
+	arg_lst = svarg(argc - 1, argv);
+	t_list *aux = arg_lst;
+	while (aux)
+	{
+		printf("%d\n", *(int *)aux->content);
+		aux = aux->next;
+	}
+	exit(EXIT_SUCCESS);
 }

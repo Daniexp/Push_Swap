@@ -6,6 +6,8 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 14:14:37 by dexposit          #+#    #+#             */
+/*   Updated: 2022/03/10 18:50:55 by dexposit         ###   ########.fr       */
+/*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
@@ -52,17 +54,16 @@ t_list	*svarg(int argc, char **argv)
 
 	if (argc == 0)
 		err_msg();
-		i = 1;
+	i = 1;
+	lst = 0;
 	while (i <= argc)
 	{
 		splitarg = arg_split(&(argv[i]));
 		aux = splitarg;
-		lst = 0;
 		while (*splitarg)
 		{
 			str_valid(*splitarg);
 			sv_lst_nrpt(&lst, ft_atoi(*splitarg));
-			printf("%d\n", ft_atoi(*splitarg));
 			splitarg++;
 		}
 		free(aux);
