@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 16:11:22 by dexposit          #+#    #+#             */
-/*   Updated: 2022/02/01 16:09:23 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 19:21:56 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *nptr)
 		res += *nptr - '0';
 		nptr++;
 		if (res > 2147483657 && sign == 1)
-			return (-1);
+			return (0);
 		if (res > 2147483648 && sign == -1)
 			return (0);
 	}
