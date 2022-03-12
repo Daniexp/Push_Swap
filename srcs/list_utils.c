@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:51:30 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/10 20:41:49 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:11:44 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_list	*cnv_unsg(t_list *ini)
 	first = ini;
 	while (ini)
 	{
-		ptr = ft_calloc(1,sizeof(int));
+		ptr = ft_calloc(1, sizeof(int));
 		if (!ptr)
 			exit(EXIT_FAILURE);
 		*ptr = 0;
@@ -66,7 +66,7 @@ size_t	in_order(t_list *lst)
 	while (lst->next)
 	{
 		sig = lst->next;
-		if (*(int*)lst->content > *(int*)sig->content)
+		if (*(int *)lst->content > *(int *)sig->content)
 			return (0);
 		lst = lst->next;
 	}
@@ -75,7 +75,7 @@ size_t	in_order(t_list *lst)
 
 t_list	**create_stacks(t_list *lst)
 {
-	t_list **res;
+	t_list	**res;
 
 	res = ft_calloc(2, sizeof(t_list));
 	if (!res)
@@ -83,4 +83,17 @@ t_list	**create_stacks(t_list *lst)
 	res[0] = cnv_unsg(lst);
 	res[1] = 0;
 	return (res);
+}
+
+void	free_lst(t_list **lst)
+{
+	t_list	*aux;
+
+	while (*lst)
+	{
+		aux = *lst;
+		*lst = (*lst)->next;
+		free(aux->content);
+		free(aux);
+	}
 }

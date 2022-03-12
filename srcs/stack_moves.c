@@ -6,15 +6,34 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:49:30 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/10 21:55:51 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 19:03:38 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
+void	put_mv(char	*mv, t_list **stc)
+{
+	ft_putstr_fd(mv, 1);
+	ft_putchar_fd('\n', 1);
+	if (*mv == 's')
+		flt_swap(*(mv + 1), stc);
+	else
+	{
+		if (*mv == 'p')
+			flt_push(*(mv + 1), stc);
+		else
+		{
+			if (ft_strlen(mv) == 2)
+				flt_rotate(*(mv + 1), stc);
+			else
+				flt_rev_rot(*(mv + 2), stc);
+		}
+	}
+}
+
 void	swap(t_list **stc)
 {
-	//cambiar el primero por el segundo
 	t_list	*fst;
 	t_list	*scn;
 
@@ -27,10 +46,9 @@ void	swap(t_list **stc)
 
 void	push(t_list **src, t_list **dst)
 {
-	//quitar el primero de src y ponerlo en dst
-	t_list *fst_src;
+	t_list	*fst_src;
 	t_list	*scn_src;
-	t_list *fst_dst;
+	t_list	*fst_dst;
 
 	fst_src = *src;
 	scn_src = (*src)->next;
@@ -48,7 +66,7 @@ void	rotate(t_list **stc)
 
 	fst = *stc;
 	snd = (*stc)->next;
-	lst	= ft_lstlast(*stc);
+	lst = ft_lstlast(*stc);
 	*stc = snd;
 	lst->next = fst;
 	fst->next = 0;
@@ -56,7 +74,6 @@ void	rotate(t_list **stc)
 
 void	rev_rot(t_list **stc)
 {
-	//poner el ultimo como el primero
 	t_list	*fst;
 	t_list	*prev_lst;
 	t_list	*lst;
