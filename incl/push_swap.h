@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 18:53:29 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:28:49 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,9 @@ void	swap(t_list **stc);
 void	push(t_list **src, t_list **dst);
 void	rotate(t_list **stc);
 void	rev_rot(t_list **stc);
+size_t	get_cnt(t_list *lst, size_t ind);
+size_t	get_top(t_list *lst);
+size_t	get_bottom(t_list *lst);
+void	three_num(t_list **stc);
 
 #endif

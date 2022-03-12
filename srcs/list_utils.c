@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:51:30 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 18:11:44 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 20:22:18 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ t_list	**create_stacks(t_list *lst)
 		exit(EXIT_FAILURE);
 	res[0] = cnv_unsg(lst);
 	res[1] = 0;
+	free_lst(&lst);
 	return (res);
 }
 

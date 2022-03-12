@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 19:38:29 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 21:36:52 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 	if (in_order(arg_lst))
 		return (0);	
 	aa = create_stacks(arg_lst);
+	if (ft_lstsize(aa[0]) == 3)
+		three_num(aa);
 	//swap(&(aa[0]));
 	//put_mv("sa", aa);
 	//push(&aa[0], &aa[1]);
@@ -46,8 +48,11 @@ int main(int argc, char **argv)
 		printf("%d\n", *(int *)aux->content);
 		aux = aux->next;
 	}
+	//printf("\n tercer puesto: %zu\n", get_cnt(aa[0], 3)); 
 	//printf("b : %d\n", *(int *)aa[1]->content);
 	free_lst(&(aa[0]));
+	free_lst(&(aa[1]));
+	free(aa);
 	//printf("%d\n", *(int *)(aa[0])->content);
 	exit(EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 14:14:37 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 19:26:04 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/12 20:16:59 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	**arg_split(char **arg)
 	return (res);
 }
 
-int		chk_atoi(char	*str)
+int	chk_atoi(char *str)
 {
 	int	res;
 
@@ -53,6 +53,21 @@ int		chk_atoi(char	*str)
 	if (res == 0 && ft_strlen(str) > 2)
 		err_msg();
 	return (res);
+}
+
+void	free_split(char **split)
+{
+	char	**cpy;
+	char	*aux;
+
+	cpy = split;
+	while (*split)
+	{
+		aux = *split;
+		free(aux);
+		split++;
+	}
+	free(cpy);
 }
 
 t_list	*svarg(int argc, char **argv)
@@ -76,7 +91,7 @@ t_list	*svarg(int argc, char **argv)
 			sv_lst_nrpt(&lst, chk_atoi(*splitarg));
 			splitarg++;
 		}
-		free(aux);
+		free_split(aux);
 		i++;
 	}
 	return (lst);
