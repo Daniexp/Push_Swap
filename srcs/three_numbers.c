@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:51 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 20:14:35 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:32:02 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 
 int	chase_sa(t_list *stc)
 {
-	int n1;
-	int n2;
-	int n3;
+	int	n1;
+	int	n2;
+	int	n3;
 
 	n1 = get_top(stc);
 	n2 = get_cnt(stc, 2);
 	n3 = get_bottom(stc);
 	return ((n1 < n3 && n1 > n2) || (n1 > n2 && n2 > n3)
-			|| (n1 < n2 && n1 < n3));
+		|| (n1 < n2 && n1 < n3));
 }
 
 int	chase_ra(t_list *stc)
 {
-	int n1;
-	int n2;
-	int n3;
+	int	n1;
+	int	n2;
+	int	n3;
 
 	n1 = get_top(stc);
 	n2 = get_cnt(stc, 2);
 	n3 = get_bottom(stc);
-	return ((n1 > n2) && (n2 < n3));	
+	return ((n1 > n2) && (n2 < n3));
 }
 
-int chase_rra(t_list *stc)
+int	chase_rra(t_list *stc)
 {
-	int n1;
-	int n2;
-	int n3;
+	int	n1;
+	int	n2;
+	int	n3;
 
 	n1 = get_top(stc);
 	n2 = get_cnt(stc, 2);

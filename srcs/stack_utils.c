@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:11 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 16:58:49 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:30:16 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ size_t	get_bottom(t_list *lst)
 
 int	dst_between(int n1, int n2)
 {
-	int n;
+	int	n;
 
 	n = n1 - n2;
 	if (n < 0)
