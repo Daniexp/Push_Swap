@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:19:12 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 18:50:41 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 19:12:46 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 
 size_t	move_b(t_list **stc)
 {
-	int num;
-	int size;
-	int pvt;
+	int	num;
+	int	size;
+	int	pvt;
 
 	size = ft_lstsize(stc[0]);
 	num = size - 3;
@@ -54,10 +54,15 @@ void	five_num(t_list **stc)
 		}
 		else
 		{
-			if (get_top(stc[1]) > get_bottom(stc[0]))
-				put_mvs("pa ra", stc);
+			if (!dst_between(get_top(stc[1]), get_bottom(stc[0])))
+			{
+				if (get_top(stc[1]) > get_bottom(stc[0]))
+					put_mvs("pa ra", stc);
+				else
+					put_mvs("rra pa ra ra", stc);
+			}
 			else
-				put_mvs("rra pa ra ra", stc);
+				put_mv("rb", stc);
 		}
 	}
 }
