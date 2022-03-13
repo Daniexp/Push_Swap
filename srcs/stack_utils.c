@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:11 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 21:03:33 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 16:58:49 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,15 @@ size_t	get_bottom(t_list *lst)
 
 	last = ft_lstlast(lst);
 	return (*(int *)last->content);
+}
+
+int	dst_between(int n1, int n2)
+{
+	int n;
+
+	n = n1 - n2;
+	if (n < 0)
+		n *= -1;
+	n--;
+	return (n);
 }

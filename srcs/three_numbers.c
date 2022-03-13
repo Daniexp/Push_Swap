@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:51 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 12:33:27 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:35:43 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	three_num(t_list **stc)
 {
-	while (ft_lstsize(stc[1]) != 0 || !in_order(stc[0]))
+	while (!in_order(stc[0]))
 	{
 		if (get_top(stc[0]) - get_cnt(stc[0], 2) == 1)
 			put_mv("sa", stc);

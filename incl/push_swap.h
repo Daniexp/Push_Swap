@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 21:28:49 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 17:31:33 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_list	*cnv_unsg(t_list *ini);
 size_t	in_order(t_list *lst);
 t_list	**create_stacks(t_list *lst);
 void	free_lst(t_list **lst);
+void	free_split(char **split);
+void	put_mvs(char *mvs, t_list **stc);
 void	put_mv(char *mv, t_list **stc);
 void	flt_swap(char c, t_list **stc);
 void	flt_push(char c, t_list **stc);
@@ -36,6 +38,8 @@ void	rev_rot(t_list **stc);
 size_t	get_cnt(t_list *lst, size_t ind);
 size_t	get_top(t_list *lst);
 size_t	get_bottom(t_list *lst);
+int		dst_between(int n1, int n2);
 void	three_num(t_list **stc);
+void	five_num(t_list **stc);
 
 #endif

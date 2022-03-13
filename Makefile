@@ -6,7 +6,7 @@
 #    By: dexposit <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/02 15:34:43 by dexposit          #+#    #+#              #
-#    Updated: 2022/03/12 20:48:44 by dexposit         ###   ########.fr        #
+#    Updated: 2022/03/13 13:27:03 by dexposit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ LIBDIR = ./srcs/libft/
 LIBFT = libft.a
 SRCS	=	main.c ./srcs/argv_utils.c ./srcs/main_utils.c ./srcs/list_utils.c \
 			./srcs/stack_moves.c ./srcs/filter_moves.c ./srcs/stack_utils.c \
-			./srcs/three_numbers.c
+			./srcs/three_numbers.c ./srcs/five_numbers.c
 OBJS	=	$(SRCS:.c=.o)
 
 all: $(NAME)
