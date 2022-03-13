@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:19:12 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 17:40:48 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/13 18:50:41 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,18 @@ size_t	move_b(t_list **stc)
 {
 	int num;
 	int size;
+	int pvt;
 
 	size = ft_lstsize(stc[0]);
 	num = size - 3;
+	pvt = size / 2 + size % 2 - 1;
 	while (num > 0)
 	{
-		if (get_top(stc[0]) != 2)
-		{
+		if (get_top(stc[0]) != pvt)
 			put_mv("pb", stc);
-			num--;
-		}
 		else
-			put_mv("ra",stc);
+			put_mvs("rra pb", stc);
+		num--;
 	}
 	return (size);
 }
