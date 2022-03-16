@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 02:12:49 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 19:04:51 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void 	sch_mv(int max, t_list **stc)
 {
 	while (cnt_cdt(max, stc))
 	{
-			printf("%d\n", max);
+	//		printf("%d\n", max);
 			src_cdt(max, stc);
 	}
 }
@@ -77,7 +77,7 @@ int	cnt_cdt(int max, t_list **stc)
 	aux = *stc;
 	while (aux)
 	{
-			printf("%d\n", res);
+	//		printf("%d\n", res);
 		if (*(int *)aux->content < max)
 			res++;
 		aux = aux->next;
@@ -93,7 +93,8 @@ void	src_cdt(int max, t_list **stc)
 	int		cnt;
 	//se puede mejorar si comprobamos 3 números antes de enviarlos
 	//para meterlos mas ordenados si se da ambiguedad
-			printf("%d\n", max);
+	//		printf("%d\n", max);
+	mv_both(stc);
 	if ((int) get_top(stc[0]) < max)
 		put_mv("pb", stc);
 	else
@@ -103,8 +104,16 @@ void	src_cdt(int max, t_list **stc)
 		rra = cnt_mv(1 , max, stc[0]);
 		if (ra < rra)
 			do_mv("ra", ra, stc);
-		else
+		if (ra > rra)
 			do_mv("rra", rra, stc);
+		if (ra == rra)
+		{
+			if (get_cnt(stc[0], ra + 1) <
+					get_cnt(stc[0], ft_lstsize(stc[0]) - rra - 1))
+				do_mv("ra", ra, stc);
+			else
+				do_mv("rra", rra, stc);
+		}
 	}
 }
 
@@ -112,8 +121,9 @@ void	do_mv(char *str, int nm, t_list **stc)
 {
 	while (nm > 0)
 	{
-			printf("3\n");
+	//		printf("3\n");
 		put_mv(str, stc);
+		mv_both(stc);
 		nm--;
 	}
 }
@@ -123,25 +133,33 @@ int		cnt_mv(int mv, int max, t_list *stc)
 	int		cnt;
 	int		i;
 	int		tp;
+	int		pr;
 
 	cnt = 0;
 	i = 1;
 	tp = ft_lstsize(stc);
 	if (mv == 0)
 	{
-		printf("%d %d %d", i, tp, max);
-		while (i <= tp && get_cnt(stc, i) >= max)
+	//	printf("%d %d %d", i, tp, max);
+		pr = get_cnt(stc, i);
+		while (i <= tp && pr >= max)
 		{
-			printf("1\n");
+	//		printf("get_cnt = %d\n", pr);
+		pr = get_cnt(stc, i);
+	//		printf("1\n");
 			cnt++;
 			i++;
 		}
 	}
 	else
 	{
-		while (tp <= i && get_cnt(stc, tp) >= max)
+		pr = get_cnt(stc, tp);
+		cnt = 1;
+		while (tp <= i && pr >= max)
 		{
-			printf("2\n");
+	//		printf("2\n");
+	//		printf("get_cnt = %d\n", pr);
+			pr = get_cnt(stc, tp);
 			cnt++;
 			tp--;
 		}

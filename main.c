@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 01:16:07 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 18:47:18 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,5 @@ int main(int argc, char **argv)
 	free_lst(&(aa[1]));
 	free(aa);
 	//printf("%d\n", *(int *)(aa[0])->content);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
