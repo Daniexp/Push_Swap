@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:23:34 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 19:07:49 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 21:13:36 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	chunk(t_list **stc)
 	if ((sz * n_chk) < ft_lstsize(stc[0]))
 		n_chk++;
 //	sz  = calc_chks(ft_lstsize(stc[0]));
+//	n_chk = sz;
 	cnt = 1;
 //		printf(" hola %d ", max_chk(sz, cnt));
 	while (cnt <= n_chk)
@@ -54,7 +55,9 @@ void	order_chk(int min, t_list **stc)
 	int	ind_max;
 	int	vl_max;
 	int	ind_md;
+	int	prev;
 
+	prev = 0;
 	while (ft_lstsize(stc[1]) && src_chk(min, stc[1]))
 	{
 		//max_min???
@@ -62,7 +65,8 @@ void	order_chk(int min, t_list **stc)
 		if (ind_max == 1)
 		{
 			put_mv("pa", stc);
-			//mv_both(stc);
+			if (prev)
+				put_mv("sa", stc);
 		}
 		else
 		{
@@ -71,11 +75,11 @@ void	order_chk(int min, t_list **stc)
 		if (ft_lstsize(stc[1]) % 2 != 0)
 			ind_md++;
 		//printf ("ind max %d,  ind min %d\n", ind_max, ind_md);
-		if (ind_md >= ind_max)
+		if (ind_md > ind_max)
 			//usar rb;
-			do_mv("rb", ind_max - 1, stc);
-		else if (ind_md < ind_max)
-				do_mv("rrb", ft_lstsize(stc[1]) - ind_max + 1, stc);	
+			prev = do_mv("rb", ind_max - 1, stc, vl_max - 1);
+		else if (ind_md <= ind_max)
+			prev = do_mv("rrb", ft_lstsize(stc[1]) - ind_max + 1, stc, vl_max - 1);	
 		}
 		//usar rrb;
 		//move_top(src_biggest(stc[1]));

@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:49:40 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 17:52:56 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 20:33:15 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		max_chk(int s, int n);
 void	sch_mv(int max, t_list **stc); 
 int		cnt_cdt(int max, t_list **stc);
 void	src_cdt(int max, t_list **stc);
-void	do_mv(char *str, int nm, t_list **stc);
+int		do_mv(char *str, int nm, t_list **stc, int prev);
 int		cnt_mv(int mv, int max, t_list *stc);
 void	mv_both(t_list **stc);
 void	order_chk(int min, t_list **stc);

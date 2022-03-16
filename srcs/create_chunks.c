@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 19:04:51 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 21:11:17 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,38 +94,52 @@ void	src_cdt(int max, t_list **stc)
 	//se puede mejorar si comprobamos 3 números antes de enviarlos
 	//para meterlos mas ordenados si se da ambiguedad
 	//		printf("%d\n", max);
-	mv_both(stc);
+	//mv_both(stc);
 	if ((int) get_top(stc[0]) < max)
+	{
 		put_mv("pb", stc);
+		if (ft_lstsize(stc[1]) >= 2 && get_top(stc[1]) < get_cnt(stc[1], 2))
+		//mv_both(stc);
+			put_mv("sb", stc);
+	}
 	else
 	{
 		//se podria mejorar en el caso de ser igual calcular el camino mas perqueño del siguiente candidato
 		ra = cnt_mv(0 , max, stc[0]);
 		rra = cnt_mv(1 , max, stc[0]);
 		if (ra < rra)
-			do_mv("ra", ra, stc);
+			do_mv("ra", ra, stc, 0);
 		if (ra > rra)
-			do_mv("rra", rra, stc);
+			do_mv("rra", rra, stc, 0);
 		if (ra == rra)
 		{
 			if (get_cnt(stc[0], ra + 1) <
 					get_cnt(stc[0], ft_lstsize(stc[0]) - rra - 1))
-				do_mv("ra", ra, stc);
+				do_mv("ra", ra, stc, 0);
 			else
-				do_mv("rra", rra, stc);
+				do_mv("rra", rra, stc, 0);
 		}
 	}
 }
 
-void	do_mv(char *str, int nm, t_list **stc)
+int	do_mv(char *str, int nm, t_list **stc, int prev)
 {
+	int	res;
+
+	res = 0;
 	while (nm > 0)
 	{
 	//		printf("3\n");
+		if (prev && get_top(stc[1]) == prev)
+		{
+			put_mv("pa", stc);
+			res = 1;
+		}
+		//mv_both(stc);
 		put_mv(str, stc);
-		mv_both(stc);
 		nm--;
 	}
+	return (res);
 }
 
 int		cnt_mv(int mv, int max, t_list *stc)
