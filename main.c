@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 20:16:54 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 01:16:07 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ int main(int argc, char **argv)
 	if (in_order(arg_lst))
 		return (0);	
 	aa = create_stacks(arg_lst);
-	five_num(aa);
-	//if (ft_lstsize(aa[0]) <= 3)
-//		three_num(aa);
-//	else
-//		five_num(aa);
+	if (ft_lstsize(aa[0]) <= 5)
+		five_num(aa);
+	else
+		chunk(aa);
 	//swap(&(aa[0]));
 	//put_mv("sa", aa);
 	//push(&aa[0], &aa[1]);
@@ -46,7 +45,7 @@ int main(int argc, char **argv)
 	//printf("tmñ: %d\n", ft_lstsize(aa[0]));
 	aux = aa[0];
 		//aux = cnv_unsg(arg_lst);
-	printf("stack a\n");
+/*	printf("stack a\n");
 	while (aux)
 	{
 		printf("%d\n", *(int *)aux->content);
@@ -58,7 +57,7 @@ int main(int argc, char **argv)
 	{
 		printf("%d\n", *(int *)aux->content);
 		aux = aux->next;
-	}
+	}*/
 	//printf("\n tercer puesto: %zu\n", get_cnt(aa[0], 3)); 
 	//printf("b : %d\n", *(int *)aa[1]->content);
 	free_lst(&(aa[0]));

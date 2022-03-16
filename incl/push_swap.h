@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 17:31:33 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/16 00:55:27 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../srcs/libft/libft.h"
+# include "chunk.h"
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -41,5 +42,6 @@ size_t	get_bottom(t_list *lst);
 int		dst_between(int n1, int n2);
 void	three_num(t_list **stc);
 void	five_num(t_list **stc);
+void	chunk(t_list **stc);
 
 #endif

@@ -1,4 +1,5 @@
 checker
+*tester*
 *.o
 *.swp
 *.out
