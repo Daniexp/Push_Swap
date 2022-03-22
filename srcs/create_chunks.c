@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/22 19:40:00 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/22 21:28:37 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,8 @@ int	do_mv(char *str, int nm, t_list **stc, int prev)
 	res = 0;
 	while (nm > 0)
 	{
-		if (prev && get_top(stc[1]) == prev)
+		if (!res && prev != 0 && (get_top(stc[1]) == prev
+					/*|| (get_top(stc[0]) != prev && get_top(stc[1]) == prev - 1)*/))
 		{
 			put_mv("pa", stc);
 			res = 1;
