@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 18:47:18 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/22 19:36:44 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 	//printf("tmñ: %d\n", ft_lstsize(aa[0]));
 	aux = aa[0];
 		//aux = cnv_unsg(arg_lst);
-/*	printf("stack a\n");
+	printf("stack a\n");
 	while (aux)
 	{
 		printf("%d\n", *(int *)aux->content);
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 	{
 		printf("%d\n", *(int *)aux->content);
 		aux = aux->next;
-	}*/
+	}
 	//printf("\n tercer puesto: %zu\n", get_cnt(aa[0], 3)); 
 	//printf("b : %d\n", *(int *)aa[1]->content);
 	free_lst(&(aa[0]));

@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 21:11:17 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/22 19:40:00 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ void	src_cdt(int max, t_list **stc)
 	{
 		put_mv("pb", stc);
 		if (ft_lstsize(stc[1]) >= 2 && get_top(stc[1]) < get_cnt(stc[1], 2))
-		//mv_both(stc);
 			put_mv("sb", stc);
 	}
 	else
@@ -129,15 +128,18 @@ int	do_mv(char *str, int nm, t_list **stc, int prev)
 	res = 0;
 	while (nm > 0)
 	{
-	//		printf("3\n");
 		if (prev && get_top(stc[1]) == prev)
 		{
 			put_mv("pa", stc);
 			res = 1;
+			if (!ft_strncmp(str, "rb", 2))
+				nm--;
 		}
-		//mv_both(stc);
-		put_mv(str, stc);
-		nm--;
+		else
+		{
+			put_mv(str, stc);
+			nm--;
+		}
 	}
 	return (res);
 }
@@ -154,26 +156,17 @@ int		cnt_mv(int mv, int max, t_list *stc)
 	tp = ft_lstsize(stc);
 	if (mv == 0)
 	{
-	//	printf("%d %d %d", i, tp, max);
-		pr = get_cnt(stc, i);
-		while (i <= tp && pr >= max)
+		while (i <= tp && get_cnt(stc, i) >= max)
 		{
-	//		printf("get_cnt = %d\n", pr);
-		pr = get_cnt(stc, i);
-	//		printf("1\n");
 			cnt++;
 			i++;
 		}
 	}
 	else
 	{
-		pr = get_cnt(stc, tp);
 		cnt = 1;
-		while (tp <= i && pr >= max)
+		while (get_cnt(stc, tp) >= max)
 		{
-	//		printf("2\n");
-	//		printf("get_cnt = %d\n", pr);
-			pr = get_cnt(stc, tp);
 			cnt++;
 			tp--;
 		}
