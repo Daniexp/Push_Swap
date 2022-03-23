@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:49:40 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 20:33:15 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/23 20:54:29 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,8 @@ void	mv_both(t_list **stc);
 void	order_chk(int min, t_list **stc);
 int		src_chk(int min, t_list *stc);
 int		pos_max(t_list *stc);
+int		get_ind(int vl, t_list *stc);
+/* moves chunks to b 2 at the same time*/
+int		mv_chks(int cnt, int sz, t_list **stc, int flag);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/22 21:53:00 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:33:28 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,47 @@ void	src_cdt(int max, t_list **stc)
 	}
 }
 
+int	check_prev(t_list **stc, int prev, int mv, char *str)
+{
+	int	res;
+	int	ind_prev;
+	int ind_max;
+
+	res = 1;
+	ind_prev = get_ind(prev, stc[1]);
+	if (!ft_strncmp(str, "rb", 2))
+	{
+		//buscar si esta prev en antes de llegar a mv desde el principio de la lista
+		//si esta comprobar la distancia de el anterior es decir su indice
+		if (ind_prev < mv /*&& ((ind_prev - 1) < (mv - ind_prev))*/)
+			res = 0;
+	}
+	else if (!ft_strncmp(str, "rrb", 3))
+	{
+		ind_max = ft_lstsize(stc[1]) - mv - 2;
+		if (ind_prev > ind_max/* && ((ind_prev - ind_max) > (ft_lstsize(stc[1]) - ind_prev + 1))*/)
+			res = 0;
+	}
+	return (res);
+}
+
+int	get_ind(int vl, t_list *stc)
+{
+	int 	res;
+	t_list	*aux;
+
+	aux = stc;
+	res = 1;
+	while (aux && *(int *)aux->content != vl)
+	{
+		res++;
+		aux = aux->next;
+	}
+	if (!aux)
+		res = -1;
+	return (res);
+}
+
 int	do_mv(char *str, int nm, t_list **stc, int prev)
 {
 	int	res;
@@ -128,12 +169,15 @@ int	do_mv(char *str, int nm, t_list **stc, int prev)
 	res = 0;
 	while (nm > 0)
 	{
-		if (!res && prev != 0 && (get_top(stc[1]) == prev /*|| (ft_lstsize(stc[0]) > 0 && get_top(stc[0]) != prev && get_top(stc[1]) == prev - 1)*/))
+		if (!res && prev != 0 && (get_top(stc[1]) == prev || (ft_lstsize(stc[0]) > 0 && get_top(stc[0]) != prev && get_top(stc[1]) == prev - 1)))
 		{
+//			if (get_top(stc[1]) == prev || check_prev(stc, prev, nm + 1, str)) 
+//			{
 			put_mv("pa", stc);
 			res = 1;
 			if (!ft_strncmp(str, "rb", 2))
 				nm--;
+//			}
 		}
 		else
 		{

@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:23:34 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/22 21:49:28 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/23 21:27:22 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	chunk(t_list **stc)
 	int sz;
 	int cnt;
 	int	n_chk;
+	int	flag;
 
 /*	sz = (ft_lstsize(stc[0]) / 13) + 22;;
 	if (sz % 2 == 0)
@@ -37,21 +38,25 @@ void	chunk(t_list **stc)
 //	if (ft_lstsize(stc[0]) % sz)
 //			n_chk++;
 	//sz = 19;
-	sz = 19;
+	//sz = 19 * 2;
+	sz = 25;
 	n_chk = ft_lstsize(stc[0]) / sz;
 	if (ft_lstsize(stc[0]) % sz)
 		n_chk++;
 	cnt = 1;
-	//Metemos los chunks del mas pequeño al mas grande
-	//seria posible meter buscar dos chunks a la vez??
-	//si tenemos 5 chunks
-	//	meter primero el 3
-	//	y despues buscar el 2 y 4 y luego buscar el 1 y el 5
-	while (cnt <= n_chk)
+	/*while (cnt <= n_chk)
 	{
 		sch_mv(max_chk(sz, cnt), stc);
 		cnt++;
+	}*/
+	//cnt = n_chk / 2;
+	flag = 0;
+	while (cnt <= n_chk / 2)
+	{
+		flag = mv_chks(cnt, sz, stc, flag);
+		cnt++;
 	}
+	cnt = n_chk + 1;
 	while (cnt-- > 0)
 		order_chk(min_chk(sz, cnt), stc);
 }
