@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:23:34 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/23 21:27:22 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/24 20:59:57 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	chunk(t_list **stc)
 //	n_chk = ft_lstsize(stc[0]) / sz;
 //	if (ft_lstsize(stc[0]) % sz)
 //			n_chk++;
-	//sz = 19;
-	//sz = 19 * 2;
-	sz = 25;
+	//sz = 33;
+	//sz = 15;
+	sz = 33;
 	n_chk = ft_lstsize(stc[0]) / sz;
 	if (ft_lstsize(stc[0]) % sz)
 		n_chk++;
@@ -51,7 +51,7 @@ void	chunk(t_list **stc)
 	}*/
 	//cnt = n_chk / 2;
 	flag = 0;
-	while (cnt <= n_chk / 2)
+	while (cnt <= n_chk / 2 + 1)
 	{
 		flag = mv_chks(cnt, sz, stc, flag);
 		cnt++;
@@ -75,7 +75,7 @@ void	order_chk(int min, t_list **stc)
 		if (ind_max == 1)
 		{
 			put_mv("pa", stc);
-			if (/*prev == 1*/ft_lstsize(stc[0]) > 1 && (get_top(stc[0]) > get_cnt(stc[0], 2)))
+			if (ft_lstsize(stc[0]) > 1 && (get_top(stc[0]) > get_cnt(stc[0], 2)))
 				put_mv("sa", stc);
 		}
 		else
@@ -84,9 +84,9 @@ void	order_chk(int min, t_list **stc)
 			ind_md = ft_lstsize(stc[1]) / 2;
 			if (ft_lstsize(stc[1]) % 2 != 0)
 				ind_md++;
-			if (ind_md > ind_max)
+			if (ind_md >= ind_max)
 				prev = do_mv("rb", ind_max - 1, stc, vl_max  - 1);
-			else if (ind_md <= ind_max)
+			else if (ind_md < ind_max)
 				 prev = do_mv("rrb", ft_lstsize(stc[1]) - ind_max + 1, stc, vl_max - 1);
 		}
 	}

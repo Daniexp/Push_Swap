@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/23 21:33:28 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/24 20:19:22 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,8 @@ int	check_prev(t_list **stc, int prev, int mv, char *str)
 	int	ind_prev;
 	int ind_max;
 
+	if (ft_lstsize(stc[1]) < 6)
+		return (1);
 	res = 1;
 	ind_prev = get_ind(prev, stc[1]);
 	if (!ft_strncmp(str, "rb", 2))
@@ -139,7 +141,7 @@ int	check_prev(t_list **stc, int prev, int mv, char *str)
 	else if (!ft_strncmp(str, "rrb", 3))
 	{
 		ind_max = ft_lstsize(stc[1]) - mv - 2;
-		if (ind_prev > ind_max/* && ((ind_prev - ind_max) > (ft_lstsize(stc[1]) - ind_prev + 1))*/)
+		if (ind_max < ind_prev/* && ((ind_prev - ind_max) > (ft_lstsize(stc[1]) - ind_prev + 1))*/)
 			res = 0;
 	}
 	return (res);
@@ -167,17 +169,18 @@ int	do_mv(char *str, int nm, t_list **stc, int prev)
 	int	res;
 
 	res = 0;
+	//printf("valor movimientos: %d\n", nm);
 	while (nm > 0)
 	{
 		if (!res && prev != 0 && (get_top(stc[1]) == prev || (ft_lstsize(stc[0]) > 0 && get_top(stc[0]) != prev && get_top(stc[1]) == prev - 1)))
 		{
-//			if (get_top(stc[1]) == prev || check_prev(stc, prev, nm + 1, str)) 
-//			{
+			//if (get_top(stc[1]) == prev || (get_top(stc[1]) == prev - 1 && check_prev(stc, prev, nm + 1, str))) 
+			//{
 			put_mv("pa", stc);
 			res = 1;
 			if (!ft_strncmp(str, "rb", 2))
 				nm--;
-//			}
+			//}
 		}
 		else
 		{

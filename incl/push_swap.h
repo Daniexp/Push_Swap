@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/16 00:55:27 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/24 17:31:12 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+void	print_stc(t_list *stc);
 t_list	*svarg(int argc, char **argv);
 void	err_msg(void);
 void	sv_lst_nrpt(t_list **lst, int num);

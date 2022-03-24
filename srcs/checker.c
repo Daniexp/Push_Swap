@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_utils.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 18:51:06 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 17:30:26 by dexposit         ###   ########.fr       */
+/*   Created: 2022/03/24 20:49:09 by dexposit          #+#    #+#             */
+/*   Updated: 2022/03/24 21:03:43 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
 
-void	err_msg(void)
+int main(int argc, char **argv)
 {
-	ft_putstr_fd("Error\n", 2);
-	exit(EXIT_FAILURE);
-}
+	if (in_order(stc[0]) && ft_lstsize(stc[1]) == 0)
+	ft_putstr_fd("OK\n", 1);
+	else
+		ft_putstr_fd("KO\n", 1);
 
-void	print_stc(t_list *stc)
-{
-	t_list	*aux;
-
-	aux = stc;
-	while (aux)
-	{
-		printf("%d\n", *(int *)aux->content);
-		aux = aux->next;
-	}
 }
