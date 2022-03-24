@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:29:53 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 17:33:12 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/24 21:29:31 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ int main(int argc, char **argv)
 	aux = aa[1];
 	printf("stack b\n");
 	print_stc(aux);*/
-	if (in_order(aa[0]))
-			printf("OK");
+//	if (in_order(aa[0]))
+//			printf("OK");
 	//printf("\n tercer puesto: %zu\n", get_cnt(aa[0], 3)); 
 	//printf("b : %d\n", *(int *)aa[1]->content);
 	free_lst(&(aa[0]));

@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 20:19:22 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/24 22:17:25 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,20 @@
 
 int calc_chks(int n)
 {
-	int pow;
+	int	sz;
+/*	int pow;
 
 	pow = 1;
 	while(pow * pow < n)
 		pow++;
-	return (pow);
+	return (pow);*/
+	if (n == 100)
+		sz = 15;
+	else if (n == 500)
+		sz = 33;
+	else
+		sz = n / 10;
+	return (sz);
 }
 
 int min_chk(int s, int n)

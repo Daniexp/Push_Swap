@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:23:34 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 20:59:57 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/24 22:19:33 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	chunk(t_list **stc)
 //			n_chk++;
 	//sz = 33;
 	//sz = 15;
-	sz = 33;
+	sz = calc_chks(ft_lstsize(stc[0]));
 	n_chk = ft_lstsize(stc[0]) / sz;
 	if (ft_lstsize(stc[0]) % sz)
 		n_chk++;
