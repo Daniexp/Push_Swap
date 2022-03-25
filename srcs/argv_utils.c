@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 14:14:37 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 20:16:59 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 20:06:40 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ t_list	*svarg(int argc, char **argv)
 	t_list	*lst;
 
 	if (argc == 0)
-		err_msg();
+		return (0);
 	i = 1;
 	lst = 0;
 	while (i <= argc)

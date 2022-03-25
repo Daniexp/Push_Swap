@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:23:34 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 22:19:33 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:36:36 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ void	order_chk(int min, t_list **stc)
 		ind_max =  pos_max(stc[1]);
 		if (ind_max == 1)
 		{
-			put_mv("pa", stc);
+			put_mv("pa", stc, 1);
 			if (ft_lstsize(stc[0]) > 1 && (get_top(stc[0]) > get_cnt(stc[0], 2)))
-				put_mv("sa", stc);
+				put_mv("sa", stc, 1);
 		}
 		else
 		{

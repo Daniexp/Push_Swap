@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:19:12 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/13 20:20:42 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:34:55 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ size_t	move_b(t_list **stc)
 	while (num > 0)
 	{
 		if (get_top(stc[0]) != pvt)
-			put_mv("pb", stc);
+			put_mv("pb", stc, 1);
 		else
 			put_mvs("rra pb", stc);
 		num--;
@@ -48,9 +48,9 @@ void	five_num(t_list **stc)
 	{
 		if (dst_between(get_top(stc[0]), get_top(stc[1])) == 0)
 		{
-			put_mv("pa", stc);
+			put_mv("pa", stc, 1);
 			if (get_top(stc[0]) > get_cnt(stc[0], 2))
-				put_mv("sa", stc);
+				put_mv("sa", stc, 1);
 		}
 		else
 		{
@@ -62,7 +62,7 @@ void	five_num(t_list **stc)
 					put_mvs("rra pa ra ra", stc);
 			}
 			else
-				put_mv("rb", stc);
+				put_mv("rb", stc, 1);
 		}
 	}
 }

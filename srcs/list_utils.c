@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 18:51:30 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/12 20:22:18 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 20:06:34 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ t_list	**create_stacks(t_list *lst)
 {
 	t_list	**res;
 
+	if (!lst)
+		return (0);
 	res = ft_calloc(2, sizeof(t_list));
 	if (!res)
 		exit(EXIT_FAILURE);

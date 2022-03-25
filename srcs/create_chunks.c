@@ -6,7 +6,7 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:08:33 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 22:17:25 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 22:46:58 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int calc_chks(int n)
 		sz = 15;
 	else if (n == 500)
 		sz = 33;
+	else if (sz == 0)
+		sz = n / 2;
 	else
 		sz = n / 10;
 	return (sz);
@@ -105,7 +107,7 @@ void	src_cdt(int max, t_list **stc)
 	//mv_both(stc);
 	if ((int) get_top(stc[0]) < max)
 	{
-		put_mv("pb", stc);
+		put_mv("pb", stc, 1);
 //		if (ft_lstsize(stc[1]) >= 2 && get_top(stc[1]) < get_cnt(stc[1], 2))
 //			put_mv("sb", stc);
 	}
@@ -184,7 +186,7 @@ int	do_mv(char *str, int nm, t_list **stc, int prev)
 		{
 			//if (get_top(stc[1]) == prev || (get_top(stc[1]) == prev - 1 && check_prev(stc, prev, nm + 1, str))) 
 			//{
-			put_mv("pa", stc);
+			put_mv("pa", stc, 1);
 			res = 1;
 			if (!ft_strncmp(str, "rb", 2))
 				nm--;
@@ -192,7 +194,7 @@ int	do_mv(char *str, int nm, t_list **stc, int prev)
 		}
 		else
 		{
-			put_mv(str, stc);
+			put_mv(str, stc, 1);
 			nm--;
 		}
 	}

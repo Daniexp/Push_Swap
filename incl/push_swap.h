@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 15:23:43 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/24 17:31:12 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:30:01 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	**create_stacks(t_list *lst);
 void	free_lst(t_list **lst);
 void	free_split(char **split);
 void	put_mvs(char *mvs, t_list **stc);
-void	put_mv(char *mv, t_list **stc);
+void	put_mv(char *mv, t_list **stc, int print);
 void	flt_swap(char c, t_list **stc);
 void	flt_push(char c, t_list **stc);
 void	flt_rotate(char c, t_list **stc);

@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:11 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/22 17:24:35 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/25 19:39:38 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void	mv_both(t_list **stc)
 		sa = get_cnt(stc[0], 2);
 		sb = get_cnt(stc[1], 2);
 		if ((fa > sa) && (fb < sb))
-			put_mv("ss", stc);
+			put_mv("ss", stc, 1);
 		else if (fa > sa)
-			put_mv("sa", stc);
+			put_mv("sa", stc, 1);
 		else if (fb < sb)
-			put_mv("sb", stc);
+			put_mv("sb", stc, 1);
 	/*	else
 		{
 			sa = get_bottom(stc[0]);
