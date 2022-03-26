@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 18:36:28 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/25 19:17:09 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/26 19:18:49 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 # define CHECKER_H
 
 # include "./push_swap.h"
-# include "../srcs/checker/gnl/get_next_line.h"
+# include "../srcs/bonus/gnl/get_next_line.h"
 #endif

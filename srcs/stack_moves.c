@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:49:30 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/25 22:54:26 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/26 18:24:06 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	swap(t_list **stc)
 	t_list	*fst;
 	t_list	*scn;
 
-//	if (ft_lstsize(*stc) < 2)
-		//return ;
+	if (ft_lstsize(*stc) < 2)
+		return ;
 //		err_msg();
 	fst = *stc;
 	scn = (*stc)->next;
@@ -50,8 +50,8 @@ void	push(t_list **src, t_list **dst)
 	t_list	*scn_src;
 	t_list	*fst_dst;
 
-//	if (ft_lstsize(*src) < 1)
-//		return ;
+	if (ft_lstsize(*src) < 1)
+		return ;
 //		err_msg();
 	fst_src = *src;
 	scn_src = (*src)->next;
@@ -67,9 +67,9 @@ void	rotate(t_list **stc)
 	t_list	*snd;
 	t_list	*lst;
 
-//	if (ft_lstsize(*stc) < 2)
-		//return ;
-//		err_msg();
+	if (ft_lstsize(*stc) < 2)
+		return ;
+		//err_msg();
 	fst = *stc;
 	snd = (*stc)->next;
 	lst = ft_lstlast(*stc);
@@ -84,8 +84,8 @@ void	rev_rot(t_list **stc)
 	t_list	*prev_lst;
 	t_list	*lst;
 
-//	if (ft_lstsize(*stc) < 2)
-		//return ;
+	if (ft_lstsize(*stc) < 2)
+		return ;
 //		err_msg();
 	fst = *stc;
 	lst = ft_lstlast(*stc);
