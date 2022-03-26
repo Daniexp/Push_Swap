@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 18:31:42 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/26 17:37:11 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/26 20:35:06 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	flt_swap(char c, t_list **stc)
 		swap(&stc[0]);
 	else if (c == 'b')
 		swap(&(stc[1]));
-	else //if (ft_lstsize(stc[0]) > 1 && ft_lstsize(stc[1]) > 1)
+	else
 	{
 		swap(&stc[0]);
 		swap(&stc[1]);
@@ -44,9 +44,9 @@ void	flt_swap(char c, t_list **stc)
 
 void	flt_push(char c, t_list **stc)
 {
-	if (/*ft_lstsize(stc[0]) > 0 &&*/ c == 'a')
+	if (c == 'a')
 		push(&stc[1], &stc[0]);
-	else if (/*ft_lstsize(stc[1]) > 0 &&*/ c == 'b')
+	else if (c == 'b')
 		push(&(stc[0]), &(stc[1]));
 }
 
@@ -56,7 +56,7 @@ void	flt_rotate(char c, t_list **stc)
 		rotate(&stc[0]);
 	else if (c == 'b')
 		rotate(&stc[1]);
-	else// if (ft_lstsize(stc[0]) > 1 && ft_lstsize(stc[1]) > 1)
+	else
 	{
 		rotate(&stc[0]);
 		rotate(&stc[1]);
@@ -69,7 +69,7 @@ void	flt_rev_rot(char c, t_list **stc)
 		rev_rot(&stc[0]);
 	else if (c == 'b')
 		rev_rot(&stc[1]);
-	else //if (ft_lstsize(stc[0]) > 1 && ft_lstsize(stc[1]) > 1)
+	else
 	{
 		rev_rot(&stc[0]);
 		rev_rot(&stc[1]);

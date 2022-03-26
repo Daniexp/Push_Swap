@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 20:49:30 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/26 18:24:06 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/26 19:26:07 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	put_mv(char	*mv, t_list **stc, int print)
 	if (*mv == 's')
 		flt_swap(*(mv + 1), stc);
 	else if (*mv == 'p')
-			flt_push(*(mv + 1), stc);
+		flt_push(*(mv + 1), stc);
 	else if (ft_strlen(mv) == 2)
-			flt_rotate(*(mv + 1), stc);
+		flt_rotate(*(mv + 1), stc);
 	else
 		flt_rev_rot(*(mv + 2), stc);
 }
@@ -36,7 +36,6 @@ void	swap(t_list **stc)
 
 	if (ft_lstsize(*stc) < 2)
 		return ;
-//		err_msg();
 	fst = *stc;
 	scn = (*stc)->next;
 	fst->next = scn->next;
@@ -52,7 +51,6 @@ void	push(t_list **src, t_list **dst)
 
 	if (ft_lstsize(*src) < 1)
 		return ;
-//		err_msg();
 	fst_src = *src;
 	scn_src = (*src)->next;
 	fst_dst = *dst;
@@ -69,7 +67,6 @@ void	rotate(t_list **stc)
 
 	if (ft_lstsize(*stc) < 2)
 		return ;
-		//err_msg();
 	fst = *stc;
 	snd = (*stc)->next;
 	lst = ft_lstlast(*stc);
@@ -86,7 +83,6 @@ void	rev_rot(t_list **stc)
 
 	if (ft_lstsize(*stc) < 2)
 		return ;
-//		err_msg();
 	fst = *stc;
 	lst = ft_lstlast(*stc);
 	prev_lst = *stc;

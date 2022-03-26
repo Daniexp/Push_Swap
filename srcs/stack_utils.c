@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:11 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/25 19:39:38 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/03/26 20:18:15 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ int	dst_between(int n1, int n2)
 	return (n);
 }
 
-void	mv_both(t_list **stc)
+/*void	mv_both(t_list **stc)
 {
 	int	fa;
 	int	sa;
 	int	fb;
-	int sb;
+	int	sb;
 
 	if (ft_lstsize(stc[0]) >= 2 && ft_lstsize(stc[1]) >= 2)
 	{
@@ -65,7 +65,7 @@ void	mv_both(t_list **stc)
 			put_mv("sa", stc, 1);
 		else if (fb < sb)
 			put_mv("sb", stc, 1);
-	/*	else
+		else
 		{
 			sa = get_bottom(stc[0]);
 			sb = get_bottom(stc[1]);
@@ -76,6 +76,6 @@ void	mv_both(t_list **stc)
 				put_mvs("rra sa ra", stc);
 			else if (sb > fb)
 				put_mvs("rrb sb rb", stc);
-		}*/
+		}
 	}
-}
+}*/
