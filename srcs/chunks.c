@@ -6,19 +6,11 @@
 /*   By: dexposit <dexposit@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 20:23:34 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/26 20:32:34 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:09:25 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
-
-/*
-	RESUMEN DEL ALGORITMO
-	Dividir nuestro array en grupos de números de x a y.
-	Mover de a los números pertenecientes a un chunk x para b.
-	Sacar un chunk de b ordenado para a.
-
-*/
 
 void	chunk(t_list **stc)
 {

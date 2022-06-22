@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 14:14:37 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/25 20:06:40 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:07:55 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ void	str_valid(char *str)
 				err_msg();
 			cnt++;
 		}
-		else
-			if (*str != ' ' && !ft_isdigit(*str))
+		else if (*str != ' ' && !ft_isdigit(*str))
 				err_msg();
 		str++;
 	}

@@ -6,7 +6,7 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 20:49:51 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/25 19:33:28 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:14:34 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,26 +61,3 @@ void	three_num(t_list **stc)
 			put_mv("rra", stc, 1);
 	}
 }
-/*
-void	threenum(t_list **stc)
-{
-	while (!in_order(stc[0]))
-	{
-		if (get_top(stc[0]) - get_cnt(stc[0], 2) == 1)
-			put_mv("sa", stc);
-		else
-		{	if (get_bottom(stc[0]) - get_cnt(stc[0],2) == 1)
-				put_mv("ra", stc);
-			else
-			{
-				if (get_top(stc[0]) - get_bottom(stc[0]) == 1)
-					put_mv("rra", stc);
-				else
-				{
-					put_mv("sa", stc);
-					put_mv("ra", stc);
-				}
-			}
-		}
-	}	
-}*/

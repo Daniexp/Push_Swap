@@ -6,17 +6,11 @@
 /*   By: dexposit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:19:12 by dexposit          #+#    #+#             */
-/*   Updated: 2022/03/25 19:34:55 by dexposit         ###   ########.fr       */
+/*   Updated: 2022/06/22 16:10:49 by dexposit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/push_swap.h"
-
-/*
- *	mv 2 numbers to b and then we order with three logic a,
- *	then we put one num from b to a and we check if it's order or not
- *	we repeat this until b is empty.
- */
 
 size_t	move_b(t_list **stc)
 {
