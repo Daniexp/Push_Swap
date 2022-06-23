@@ -3,6 +3,7 @@
 ## Description
 In this project you have to sort some data (integers) on a stack with a limited set of instructions and in the fewest number of instructions. To be successful, you must learn some of the extensive algorithms and choose one than order 100 in < 700 and 500 in < 5500.
 ## How to use
+### Compile and Execute the program
 First of all you have to execute the makefile, I recommend use make bonus to compile the push_swap and the checker. Of course you have to be inside the repository.
 ```bash
 make bonus;
@@ -27,3 +28,5 @@ I use the seq command, but you can use whatever you wan´t like some random numb
 arg=$(seq 0 99 | sort -R | xargs);
 ./push_swap $arg | ./checker $arg
 ```
+### Inputs
+### Outputs
