@@ -6,7 +6,7 @@ In this project you have to sort some data (integers) on a stack with a limited 
 ### Compile and Execute the program
 First of all you have to execute the makefile, I recommend use make bonus to compile the push_swap and the checker. Of course you have to be inside the repository.
 ```bash
-make bonus;
+make bonus clean;
 ```
 You can pass the arguments (numbers to order) of this program with two differents ways.
 
