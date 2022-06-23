@@ -10,7 +10,7 @@ In this project you have to sort some data (integers) on a stack with a limited 
  - You have to order the number of a in ascendent order.
  - To do it, you have this moves available:
 ### Inputs
-The numbers can´t be duplicate or bigger than a integer. Of course all the inputs that are not numbers are not valid.
+The numbers can´t be duplicate or bigger than a integer. Of course all the inputs that are not numbers are not valid. There are some examples:
 ```bash
 ./push_swap "";
 ./push_swap "-";
@@ -23,11 +23,11 @@ The numbers can´t be duplicate or bigger than a integer. Of course all the inpu
 ### Outputs
 #### Push Swap
 - If some argument is incorrect the output will be `Error`.
-- If the numbers are in order the push_swap `nothing` will be printed.
+- If the numbers are in order the push_swap will print `nothing`.
 - In other case will print the moves, that order the numbers separete by `'\n'`.
 #### Checker
-- If there is some arguments error, will print `Error`.
-- If the moves printed by the push_swap are incorrect `KO`.
+- If exits some argument error, will print `Error`.
+- If the moves printed by the push_swap doesn´t order the numbers in the correct order `KO`.
 - If the push_swap order correctly `OK`.
 ## How to use
 ### Compile and Execute the program
