@@ -8,7 +8,7 @@ In this project you have to sort some data (integers) on a stack with a limited 
    - In a you will have positive or negative numbers, never duplicate ones.
    - b will be empty.
  - You have to order the number of a in ascendent order.
- - To do it, you have this moves available:
+ - To order the stack a, you have this available moves:
 ### Inputs
 The numbers can´t be duplicate or bigger than a integer. Of course all the inputs that are not numbers are not valid. There are some examples:
 ```bash
