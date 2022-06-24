@@ -67,7 +67,7 @@ Or you can put the numbers all in the same argument separates by spaces.
 ```bash
 ./push_swap "1 -2 50 -23 -20 100 47";
 ```
-You can combine the options explaining before, but i think that it´s not really useful.
+You can combine the options explaining before, but I think that it´s not really need it.
 ```bash
 ./push_swap "5 1 3" -6 "-3 6 8 -11" 100 -200;
 ```
@@ -75,7 +75,7 @@ The push_swap just print the sequence of moves that order the input.  So you hav
 I use the seq command, but you can use whatever you wan´t like some random number generator online or something like that.
 ```bash
 arg=$(seq 0 99 | sort -R | xargs);
-./push_swap $arg | ./checker $arg
+./push_swap $arg | ./checker $arg;
 ```
 If you want to count the number of moves you can use the wc command.
 ```bash
