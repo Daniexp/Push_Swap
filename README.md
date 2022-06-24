@@ -15,7 +15,7 @@ In this project you have to sort some data (integers) on a stack with a limited 
 | Output | Name | Description |
 | :---: | :---: | :---:|
 | sa | swap a | change the positions of the first and the second in a. |
-| sb | swap b | same as sa but in a, only swap if they ar at least 2 numbers. |
+| sb | swap b | same as sa but in a, only swap if they are at least 2 numbers. |
 | ss | double swap | Do sa and sb at the same time. |
 | pa | push a | take first in b and move it to the top of a. |
 | pb | push b | take the first of a and move it to the top of b. |
@@ -69,7 +69,7 @@ Or you can put the numbers all in the same argument separates by spaces.
 ```
 You can combine the options explaining before, but i think that it´s not really useful.
 ```bash
-./push_swap "5 1 3" -6 "3 6 8 -11" 100 -200
+./push_swap "5 1 3" -6 "-3 6 8 -11" 100 -200;
 ```
 The push_swap just print the sequence of moves that order the input.  So you have to use the checker to see if the push_swap really order or not.
 I use the seq command, but you can use whatever you wan´t like some random number generator online or something like that.
