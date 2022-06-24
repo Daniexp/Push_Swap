@@ -50,7 +50,20 @@ The numbers can´t be duplicate or bigger than a integer. Of course all the inpu
 - If the push_swap order correctly `OK`.
 ### Implementation
  In this section we will see how my push_swap order the numbers, for all the people that are interested in implement something similar in their projects.
+  First of all we have to create the stacks and fill the stack a with the arguments of the program. I split all the arguments by space and I use the atoi of the libft, but with some more checks like you can´t repeat signs and stuff like that. The first argument is on the top of the stack **a** there is an example:
  
+ <div align="center">
+ <img width="279" alt="push_swap_initial_stack" src="https://user-images.githubusercontent.com/81389488/175532555-1730fd4e-b5a0-459c-b8d0-382969882d9e.png">
+
+<div align="left">
+ 
+ Then I just convert all the number to positive this is necessary if you implement the raddix algorithm in my case it will simplify my algorithm. I did it from 0 to n -1. Where **n** is the number of arguments to order. 
+ 
+ <div align="center">
+ <img width="279" alt="push_swap_convert_arg" src="https://user-images.githubusercontent.com/81389488/175536045-c8b01936-a8d8-40f3-ac5b-be387d37fafe.png">
+  
+<div align="left">
+
 ## How to use
 ### Compile and Execute the program
 First of all you have to execute the makefile, I recommend use make bonus to compile the push_swap and the checker. Of course you have to be inside the repository.
