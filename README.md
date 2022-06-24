@@ -3,12 +3,31 @@
 ## Description
 In this project you have to sort some data (integers) on a stack with a limited set of instructions and in the fewest number of instructions. To be successful, you must learn some of the extensive algorithms and choose one than order 100 in < 700 and 500 in < 5500.
 ### Game Rules
- - You have two stacks, a and b.
+ - You have two stacks, **a** and **b**.
  - At start:
-   - In a you will have positive or negative numbers, never duplicate ones.
-   - b will be empty.
- - You have to order the number of a in ascendent order.
- - To order the stack a, you have this available moves:
+   - In **a** you will have positive or negative numbers, never duplicate ones. It's really important that the first argument you pass is in the top of the stack **a**.
+   - **b** will be empty.
+ - You have to order the number of **a** in ascendent order.
+ - To order the stack **a**, you have this available moves:
+
+<div align="center">
+
+| Output | Name | Description |
+| :---: | :---: | :---:|
+| sa | swap a | change the positions of the first and the second in a. |
+| sb | swap b | same as sa but in a, only swap if they ar at least 2 numbers. |
+| ss | double swap | Do sa and sb at the same time. |
+| pa | push a | take first in b and move it to the top of a. |
+| pb | push b | take the first of a and move it to the top of b. |
+| ra | rotate a | the first number in a is move it to the bottom of a. |
+| rb | rotate b | the first number in b is move it to the bottom of b. |
+| rr | double rotate | Do ra and rb at the same time. |
+| rra | reverse rotate a | the last number in stack a is move it to the top. |
+| rrb | reverse rotate b | the number in the bottom of b is move it to the top. |
+| rrr | double reverse rotate | do rra and rrb at the same time. |
+
+<div align="left">
+
 ### Inputs
 The numbers can´t be duplicate or bigger than a integer. Of course all the inputs that are not numbers are not valid. There are some examples:
 ```bash
@@ -29,6 +48,9 @@ The numbers can´t be duplicate or bigger than a integer. Of course all the inpu
 - If exits some argument error, will print `Error`.
 - If the moves printed by the push_swap doesn´t order the numbers in the correct order `KO`.
 - If the push_swap order correctly `OK`.
+### Implementation
+ In this section we will see how my push_swap order the numbers, for all the people that are interested in implement something similar in their projects.
+ 
 ## How to use
 ### Compile and Execute the program
 First of all you have to execute the makefile, I recommend use make bonus to compile the push_swap and the checker. Of course you have to be inside the repository.
